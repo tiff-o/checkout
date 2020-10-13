@@ -10,14 +10,8 @@ class Product
     @price = price
   end
 
-  def list
-    # list all products by name only
-    @names = []
-    @products = Catalogue.new(@json_file).products
-    @products.each do |product|
-      @names << product["name"]
-    end
-    @names
+  def show
+    @product = Product.new(uuid: @uuid, name: @name, price: @price)
   end
 
   def remove_from_cart
@@ -29,5 +23,4 @@ class Product
 
 end
 
-# product = Product.new(uuid: @uuid, name: @name, price: @price)
-# p product.list
+@product = Product.new(uuid: @uuid, name: @name, price: @price)

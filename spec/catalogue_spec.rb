@@ -14,4 +14,12 @@ describe Catalogue do
       expect(@catalogue.products.first["price"]).to eq "15.39"
     end
   end
+
+  describe ".list" do
+    it "should create list of product names" do
+
+      expect(@catalogue.list.first).to eq "Jockey Wheels - Orange"
+      expect(@catalogue.list.last).to eq "Front Derailleur - 34.9mm"
+    end
+  end
 end

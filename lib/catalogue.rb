@@ -10,6 +10,16 @@ class Catalogue
     load_products
   end
 
+  def list
+    # list all products by name only
+    @names = []
+    @products = Catalogue.new(@json_file).products
+    @products.each do |product|
+      @names << product["name"]
+    end
+    @names
+  end
+
   private
 
   def load_products
@@ -24,5 +34,5 @@ class Catalogue
   end
 end
 
-# catalogue = Catalogue.new(@json_file)
-# puts catalogue.products
+@catalogue = Catalogue.new(@json_file)
+# puts catalogue.list

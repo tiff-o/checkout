@@ -1,5 +1,5 @@
 require_relative 'spec_helper'
-require_relative '../lib/catalogue'
+require_relative '../lib/models/catalogue'
 
 describe Catalogue do
   before do

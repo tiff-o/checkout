@@ -27,8 +27,7 @@ class CatalogueView
     # select from options using number
     puts "----------------------"
     puts "Which product? Please enter the item's number."
-    gets.chomp.to_i
-
+    gets.chomp.to_i - 1
   end
 
   def add_to_cart

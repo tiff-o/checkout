@@ -19,25 +19,17 @@ class CatalogueController
 
   def show
     index = @catalogue_view.ask_user_for_index
-    @product = @catalogue.products[index - 1]
-    @catalogue_view.display_product(@product)
+    @catalogue.products[index]
+    # @catalogue_view.display_product(@product)
   end
 
   def list_products
     display_products
   end
 
-  def list_cart
-    display_cart
-  end
-
   private
 
   def display_products
     @catalogue_view.display_products(@catalogue.list) # send to view to show all products
-  end
-
-  def display_cart
-    @catalogue_view.display_cart(@shopping_cart)
   end
 end

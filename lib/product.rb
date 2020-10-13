@@ -1,23 +1,21 @@
 require 'json'
 
 class Product
-  attr_reader :uuid, :name, :price
+  attr_reader :products
 
-  def initialize(uuid:, name:, price:)
-    @uuid = uuid
-    @name = name
-    @price = price
+  def initialize
+    @products = []
+    load_products
   end
 
-  def list
-    # list all products
-  end
-
-  def add_to_cart
-    # list products
-    # user chooses product by index + 1
-    # add instance of product to cart
-    # update_cart
+  def self.list
+    # list all products by name only
+    @names = []
+    inventory = Product.new
+    inventory.products.each do |product|
+      @names << product["name"]
+    end
+    @names
   end
 
   def remove_from_cart
@@ -26,8 +24,20 @@ class Product
     # delete instance of product from cart
     # update_cart
   end
+
+  def load_products
+    @json_file = File.read('lib/products.json')
+    products = JSON.parse(@json_file) # hash
+    # product = products[0] # first product hash
+    products.each do |product|
+      uuid = product["uuid"]
+      name = product["name"]
+      price = product["price"]
+      @products << product
+    end
+  end
 end
-
-private
-
 # read json file
+
+p Product.list
+

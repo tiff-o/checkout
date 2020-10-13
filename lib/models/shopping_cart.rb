@@ -1,22 +1,26 @@
-class ShoppingCart
-  attr_accessor :total, :cart_products
+require_relative 'product'
 
-  def initialize(total: 0)
+class ShoppingCart
+  attr_reader :total, :cart_products
+
+  def initialize
     @cart_products = []
     @total = 0
   end
 
+  def create
+    @shopping_cart = ShoppingCart.new
+  end
+
   def add(product)
-    # add products to array
     @cart_products << product
-    @total += product.price.to_f
+    @total += product["price"].to_f
   end
 
   def all
-    # get all products in cart
     @cart_products.each do |product|
-      @name = product.name
-      @price = product.price
+      @name = product["name"]
+      @price = product["price"]
     end
   end
 end

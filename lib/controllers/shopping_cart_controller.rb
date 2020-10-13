@@ -1,5 +1,4 @@
 require_relative '../models/shopping_cart'
-# require_relative 'product'
 require_relative '../views/shopping_cart_view'
 
 # USER ACTIONS
@@ -17,17 +16,19 @@ class ShoppingCartController
     @shopping_cart_view = ShoppingCartView.new
   end
 
-  def add
-    @shopping_cart_view.add_to_cart
-  end
-
-  def list_cart
+  def add(index)
+    @catalogue = Catalogue.new(@json_file)
+    @product = @catalogue.products[index - 1]
+    @shopping_cart.add(@product)
+    @shopping_cart_view.added_to_cart(@product)
+    @total = shopping_cart.total
+    @name = @product["name"]
+    @price = @product["price"]
+    @products = @shopping_cart.cart_products
     display_cart
   end
 
-  private
-
   def display_cart
-    @shopping_cart_view.display_cart(@shopping_cart)
+    @shopping_cart_view.display_cart(@products, @total)
   end
 end

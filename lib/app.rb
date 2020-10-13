@@ -8,8 +8,9 @@ require_relative 'views/shopping_cart_view'
 
 require_relative 'router'
 
-catalogue = Catalogue.new(@json_file)
 shopping_cart = ShoppingCart.new
+
+catalogue = Catalogue.new(@json_file)
 catalogue_controller = CatalogueController.new(catalogue: catalogue)
 shopping_cart_controller = ShoppingCartController.new(shopping_cart: shopping_cart)
 

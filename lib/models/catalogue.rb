@@ -1,5 +1,5 @@
 require 'json'
-# require_relative 'product'
+require_relative 'product'
 
 class Catalogue
   attr_accessor :products

@@ -6,7 +6,9 @@ class Router
   end
 
   def run
+    puts ""
     puts " --- WELCOME TO CHECKOUT --- "
+    puts ""
     display_tasks
 
     while @running
@@ -16,6 +18,9 @@ class Router
   end
 
   def stop
+    puts ""
+    puts "Thanks for shopping with Checkout! See you next time."
+    puts ""
     @running = false
   end
 

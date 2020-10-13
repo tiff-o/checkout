@@ -10,8 +10,4 @@ class Product
   def show
     @product = Product.new(uuid: @uuid, name: @name, price: @price)
   end
-
-  def all
-    @products = Product.all
-  end
 end

@@ -27,4 +27,13 @@ describe Product do
       expect(@product).to be_a Product
     end
   end
+
+  describe ".all" do
+    it "should retrieve details of all products" do
+      @product = Product.new(uuid: @uuid, name: @name, price: @price)
+      @product.show
+
+      expect(@product).to be_a Product
+    end
+  end
 end

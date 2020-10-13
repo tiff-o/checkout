@@ -1,22 +1,16 @@
+require_relative 'product'
+
 class ShoppingCart
-  def initialize
+  attr_accessor :total, :cart_products
+
+  def initialize(total: 0)
     @cart_products = []
+    @total = 0
   end
 
   def add(product)
     # add or delete products from array
     @cart_products << product
-  end
-
-  def display_cart
-    # show products in cart including total
-  end
-
-  def clear_cart
-    # destroy all instances of product in cart
-  end
-
-  def calculate_total
-    # calculate sum of products in cart
+    @total += product.price
   end
 end

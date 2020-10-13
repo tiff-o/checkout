@@ -1,6 +1,6 @@
 class ShoppingCart
   def initialize
-    @products = []
+    @cart_products = []
   end
 
   def update_cart

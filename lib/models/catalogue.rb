@@ -33,6 +33,3 @@ class Catalogue
     end
   end
 end
-
-@catalogue = Catalogue.new(@json_file)
-# puts catalogue.list

@@ -22,5 +22,3 @@ class Product
   end
 
 end
-
-@product = Product.new(uuid: @uuid, name: @name, price: @price)

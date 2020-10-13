@@ -17,6 +17,12 @@ class CatalogueController
     @catalogue_view = CatalogueView.new
   end
 
+  def show
+    index = @catalogue_view.ask_user_for_index
+    @product = @catalogue.products[index - 1]
+    @catalogue_view.display_product(@product)
+  end
+
   def list_products
     display_products
   end

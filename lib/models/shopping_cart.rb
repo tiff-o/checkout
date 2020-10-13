@@ -3,8 +3,9 @@ class ShoppingCart
     @cart_products = []
   end
 
-  def update_cart
+  def add(product)
     # add or delete products from array
+    @cart_products << product
   end
 
   def display_cart

@@ -17,6 +17,10 @@ class ShoppingCartController
     @shopping_cart_view = ShoppingCartView.new
   end
 
+  def add
+    @shopping_cart_view.add_to_cart
+  end
+
   def list_cart
     display_cart
   end

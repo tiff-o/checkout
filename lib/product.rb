@@ -1,18 +1,20 @@
-require 'json'
+require_relative 'catalogue'
+# show product details
 
 class Product
-  attr_reader :products
+  attr_reader :uuid, :name, :price
 
-  def initialize
-    @products = []
-    load_products
+  def initialize(uuid:, name:, price:)
+    @uuid = uuid
+    @name = name
+    @price = price
   end
 
-  def self.list
+  def list
     # list all products by name only
     @names = []
-    inventory = Product.new
-    inventory.products.each do |product|
+    @products = Catalogue.new(@json_file).products
+    @products.each do |product|
       @names << product["name"]
     end
     @names
@@ -25,19 +27,7 @@ class Product
     # update_cart
   end
 
-  def load_products
-    @json_file = File.read('lib/products.json')
-    products = JSON.parse(@json_file) # hash
-    # product = products[0] # first product hash
-    products.each do |product|
-      uuid = product["uuid"]
-      name = product["name"]
-      price = product["price"]
-      @products << product
-    end
-  end
 end
-# read json file
 
-p Product.list
-
+# product = Product.new(uuid: @uuid, name: @name, price: @price)
+# p product.list

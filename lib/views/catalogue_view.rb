@@ -1,7 +1,7 @@
 class CatalogueView
   def display_products(products)
     index = 0
-    puts " ------ CATALOG ------ "
+    puts " -------- CATALOGUE -------- "
     products.each do |product|
       puts "#{index += 1}. #{product}"
     end
@@ -12,16 +12,18 @@ class CatalogueView
     name = product["name"]
     price = product["price"]
 
-    puts "----------------------"
+    puts " --------------------------- "
     puts "UUID: #{uuid}"
     puts "Name: #{name}"
     puts "Price: $#{price}"
-    puts "----------------------"
+    puts " --------------------------- "
   end
 
   def ask_user_for_index
-    puts "----------------------"
-    puts "Choose a product (1 - 4) to see available options."
+    puts " --------------------------- "
+    puts ""
+    puts "Choose a product (1 - 4)"
+    puts "to see available options."
     gets.chomp.to_i
   end
 end

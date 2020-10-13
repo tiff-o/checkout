@@ -11,6 +11,7 @@ class ShoppingCartView
   end
 
   def added_to_cart(product)
+    puts ""
     puts "Added #{product["name"]} to cart!"
     puts ""
   end

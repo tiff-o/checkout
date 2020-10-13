@@ -6,8 +6,7 @@ class Router
   end
 
   def run
-    puts "WELCOME TO CHECKOUT"
-    puts " ----------------- "
+    puts " --- WELCOME TO CHECKOUT --- "
     display_tasks
 
     while @running
@@ -55,8 +54,9 @@ class Router
 
   def display_product_actions
     puts ""
-    puts " ---------------------- "
-    puts " What would you like to do? (1, 2 or 3)"
+    puts " --------------------------- "
+    puts " What would you like to do?"
+    puts "(1, 2 or 3)"
     puts "1. Add item to cart"
     puts "2. View item details"
     puts "3. Checkout"

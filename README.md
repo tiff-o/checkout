@@ -41,7 +41,7 @@ To install dependencies run:
 
     bundle install
 
-# EXECUTE SOLUTION
+## EXECUTE SOLUTION
 
 This is a CLI app that can be run by entering the following command in your terminal:
 
@@ -49,13 +49,13 @@ This is a CLI app that can be run by entering the following command in your term
 
 When first run, you'll be prompted to choose what you'd like to do by entering the corresponding number to the action. This is how all actions are chosen. When you choose 'checkout,' the app will exit.
 
-# TEST
+## TEST
 
 Rspec tests can be run via terminal command:
 
     rspec
 
-OR
+### OR
 
     rake
 

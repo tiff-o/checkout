@@ -1,5 +1,3 @@
-require_relative 'product'
-
 class ShoppingCart
   attr_accessor :total, :cart_products
 
@@ -9,8 +7,16 @@ class ShoppingCart
   end
 
   def add(product)
-    # add or delete products from array
+    # add products to array
     @cart_products << product
-    @total += product.price
+    @total += product.price.to_f
+  end
+
+  def all
+    # get all products in cart
+    @cart_products.each do |product|
+      @name = product.name
+      @price = product.price
+    end
   end
 end

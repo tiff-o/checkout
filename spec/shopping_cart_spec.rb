@@ -19,14 +19,28 @@ describe ShoppingCart do
       @shopping_cart.add(@product)
     end
 
-      it "should add product to shopping cart" do
-        expect(@shopping_cart.cart_products.count).to eq 1
-      end
-
-      it "should update cart total" do
-        expect(@shopping_cart.total).to eq 15.39
-      end
+    it "should add product to shopping cart" do
+      expect(@shopping_cart.cart_products.count).to eq 1
     end
 
+    it "should update cart total" do
+      expect(@shopping_cart.total).to eq 15.39
+    end
+  end
+
+  describe ".all" do
+    before do
+      @shopping_cart = ShoppingCart.new
+      @product = Product.new(uuid: 1411, name: "Jockey Wheels - Orange", price: "15.39")
+      @shopping_cart.add(@product)
+      @new_product = Product.new(uuid: 23881, name: "Chain Ring 146mm", price: "65.95")
+      @shopping_cart.add(@new_product)
+    end
+
+    it "should return all products in shopping cart" do
+      expect(@shopping_cart.all.count).to eq 2
+    end
+
+  end
 
 end

@@ -4,9 +4,9 @@ class ShoppingCartView
     puts " ------ SHOPPING CART ------ "
     puts ""
     products.each do |product|
-      puts "#{index += 1}. #{product["name"]} - #{product["price"]}"
+      puts "#{index += 1}. #{product["name"]} - $#{product["price"]}"
     end
-    puts "TOTAL: #{total.round(2)}"
+    puts "TOTAL: $#{total.round(2)}"
     puts ""
   end
 

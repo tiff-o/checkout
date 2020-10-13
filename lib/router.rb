@@ -31,7 +31,6 @@ class Router
                 display_tasks
     when 2 then @shopping_cart_controller.display_cart
                 display_tasks
-
     when 3 then stop
     end
   end
@@ -39,15 +38,15 @@ class Router
   def catalogue(action, index)
     case action
     when 1 then @shopping_cart_controller.add(index)
-
     when 2 then @catalogue_controller.show(index)
-
     when 3 then stop
     end
   end
 
   def display_tasks
-    puts "What would you like to do? (Choose 1, 2, or 3)"
+    puts "What would you like to do?"
+    puts "(Choose 1, 2, or 3)"
+    puts ""
     puts "1. Browse products"
     puts "2. View shopping cart"
     puts "3. Checkout"

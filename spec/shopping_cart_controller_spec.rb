@@ -21,11 +21,11 @@ describe ShoppingCartController do
     end
   end
 
-  describe ".list_cart" do
+  describe ".display_cart" do
     let(:shopping_cart_controller) { ShoppingCartController.new(shopping_cart: shopping_cart) }
 
     it "should implement method to get all products in shopping cart to display in view" do
-      expect(shopping_cart_controller).to respond_to :list_cart
+      expect(shopping_cart_controller).to respond_to :display_cart
     end
   end
 end

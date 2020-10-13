@@ -1,13 +1,6 @@
 require_relative '../models/shopping_cart'
 require_relative '../views/shopping_cart_view'
 
-# USER ACTIONS
-# load list of products from products.json file
-# display list of products to user
-# add products to shopping cart
-# calculate total cost
-# display total cost
-
 class ShoppingCartController
   attr_reader :shopping_cart
 
@@ -22,8 +15,6 @@ class ShoppingCartController
     @shopping_cart.add(@product)
     @shopping_cart_view.added_to_cart(@product)
     @total = shopping_cart.total
-    @name = @product["name"]
-    @price = @product["price"]
     @products = @shopping_cart.cart_products
     display_cart
   end

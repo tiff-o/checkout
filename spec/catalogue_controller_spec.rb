@@ -29,4 +29,12 @@ describe CatalogueController do
       expect(catalogue_controller).to respond_to :list_products
     end
   end
+
+  describe ".add_to_cart" do
+    let(:catalogue_controller) { CatalogueController.new(catalogue: catalogue) }
+
+    it "should implement method to display individual product in view" do
+      expect(catalogue_controller).to respond_to :add_to_cart
+    end
+  end
 end

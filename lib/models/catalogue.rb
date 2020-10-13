@@ -2,7 +2,7 @@ require 'json'
 require_relative 'product'
 
 class Catalogue
-  attr_accessor :products
+  attr_reader :products
 
   def initialize(json_file)
     @products = []
@@ -11,7 +11,6 @@ class Catalogue
   end
 
   def list
-    # list all products by name only
     @names = []
     @products = Catalogue.new(@json_file).products
     @products.each do |product|

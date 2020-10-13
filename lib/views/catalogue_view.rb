@@ -15,13 +15,13 @@ class CatalogueView
     puts "----------------------"
     puts "UUID: #{uuid}"
     puts "Name: #{name}"
-    puts "Price: #{price}"
+    puts "Price: $#{price}"
     puts "----------------------"
   end
 
   def ask_user_for_index
     puts "----------------------"
-    puts "Choose a product (1 - 4) for more options."
+    puts "Choose a product (1 - 4) to see available options."
     gets.chomp.to_i
   end
 end

@@ -2,7 +2,6 @@ require_relative 'spec_helper'
 require_relative '../lib/models/shopping_cart'
 
 describe ShoppingCart do
-
   describe "#initialize" do
     it "should create empty shopping cart" do
       @shopping_cart = ShoppingCart.new
@@ -14,8 +13,9 @@ describe ShoppingCart do
 
   describe ".add" do
     before do
+      @catalogue = Catalogue.new(@json_file)
+      @product = @catalogue.products[0]
       @shopping_cart = ShoppingCart.new
-      @product = Product.new(uuid: 1411, name: "Jockey Wheels - Orange", price: 15.39)
       @shopping_cart.add(@product)
     end
 
@@ -30,17 +30,14 @@ describe ShoppingCart do
 
   describe ".all" do
     before do
+      @catalogue = Catalogue.new(@json_file)
+      @product = @catalogue.products[1]
       @shopping_cart = ShoppingCart.new
-      @product = Product.new(uuid: 1411, name: "Jockey Wheels - Orange", price: "15.39")
       @shopping_cart.add(@product)
-      @new_product = Product.new(uuid: 23881, name: "Chain Ring 146mm", price: "65.95")
-      @shopping_cart.add(@new_product)
     end
 
     it "should return all products in shopping cart" do
-      expect(@shopping_cart.all.count).to eq 2
+      expect(@shopping_cart.all.count).to eq 1
     end
-
   end
-
 end

@@ -8,10 +8,6 @@ class ShoppingCart
     @total = 0
   end
 
-  def create
-    @shopping_cart = ShoppingCart.new
-  end
-
   def add(product)
     @cart_products << product
     @total += product["price"].to_f

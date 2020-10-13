@@ -1,13 +1,6 @@
 require_relative '../models/catalogue'
 require_relative '../views/catalogue_view'
 
-# USER ACTIONS
-# load list of products from products.json file
-# display list of products to user
-# add products to shopping cart
-# calculate total cost
-# display total cost
-
 class CatalogueController
   attr_reader :catalogue
 

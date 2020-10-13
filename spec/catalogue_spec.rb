@@ -7,8 +7,7 @@ describe Catalogue do
   end
 
   describe "#initialize" do
-    it "should create inventory of products" do
-
+    it "should create catalogue of products" do
       expect(@catalogue.products.first["uuid"]).to eq 1411
       expect(@catalogue.products.first["name"]).to eq "Jockey Wheels - Orange"
       expect(@catalogue.products.first["price"]).to eq "15.39"
@@ -17,7 +16,6 @@ describe Catalogue do
 
   describe ".list" do
     it "should create list of product names" do
-
       expect(@catalogue.list.first).to eq "Jockey Wheels - Orange"
       expect(@catalogue.list.last).to eq "Front Derailleur - 34.9mm"
     end

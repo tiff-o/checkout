@@ -9,21 +9,22 @@ describe Product do
   end
 
   describe "#initialize" do
-
     let(:product) { Product.new(uuid: @uuid, name: @name, price: @price) }
 
-    it "should create a product" do
+    it "should create an instance of product with correct details stored" do
+      expect(product).to be_a Product
+      expect(product.uuid).to eq 1411
       expect(product.name).to eq "Jockey Wheels - Orange"
+      expect(product.price).to eq 15.39
     end
   end
 
   describe ".show" do
-
-    it "should show individual product details" do
+    it "should retrieve details of an individual product" do
       @product = Product.new(uuid: @uuid, name: @name, price: @price)
+      @product.show
 
-      expect(@product.show.name).to eq "Jockey Wheels - Orange"
+      expect(@product).to be_a Product
     end
   end
-
 end

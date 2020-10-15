@@ -2,7 +2,7 @@ require_relative '../models/catalogue'
 require_relative '../views/catalogue_view'
 
 class CatalogueController
-  attr_reader :catalogue
+  attr_reader :catalogue, :catalogue_view, :product, :products
 
   def initialize(catalogue:)
     @catalogue = catalogue
@@ -11,9 +11,6 @@ class CatalogueController
 
   def show(index)
     @product = @catalogue.products[index - 1]
-    @uuid = @product["uuid"]
-    @name = @product["name"]
-    @price = @product["price"]
     @catalogue_view.display_product(@product)
   end
 
@@ -21,14 +18,11 @@ class CatalogueController
     display_products
   end
 
-  def add_to_cart(product)
-    @catalogue_view.add_to_cart(product)
-  end
-
   private
 
   def display_products
-    @catalogue_view.display_products(@catalogue.list)
+    @products = @catalogue.list
+    @catalogue_view.display_products(@products)
     @catalogue_view.ask_user_for_index
   end
 end

@@ -4,15 +4,15 @@ require_relative 'product'
 class Catalogue
   attr_reader :products
 
-  def initialize(json_file)
+  def initialize(catalogue_file)
     @products = []
-    @json_file = json_file
+    @catalogue_file = catalogue_file
     load_products
   end
 
   def list
     @names = []
-    @products = Catalogue.new(@json_file).products
+    @products = Catalogue.new(@catalogue_file).products
     @products.each do |product|
       @names << product["name"]
     end
@@ -22,8 +22,8 @@ class Catalogue
   private
 
   def load_products
-    json_file = File.read('lib/products.json')
-    products = JSON.parse(json_file)
+    catalogue_file = File.read('lib/products.json')
+    products = JSON.parse(catalogue_file)
     products.each do |product|
       @uuid = product["uuid"]
       @name = product["name"]

@@ -51,7 +51,7 @@ When first run, you'll be prompted to choose what you'd like to do by entering t
 
 ## TEST
 
-Rspec tests can be run via terminal command:
+RSpec tests can be run via terminal command:
 
     rspec
 

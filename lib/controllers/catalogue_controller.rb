@@ -10,7 +10,7 @@ class CatalogueController
   end
 
   def show(index)
-    @product = @catalogue.products[index]
+    @product = @catalogue.products[index - 1]
     @uuid = @product["uuid"]
     @name = @product["name"]
     @price = @product["price"]

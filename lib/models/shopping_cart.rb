@@ -2,7 +2,7 @@ require 'json'
 require_relative 'product'
 
 class ShoppingCart
-  attr_reader :total, :cart_products
+  attr_reader :cart_products, :total, :cart_file
 
   def initialize(cart_file)
     @cart_products = []

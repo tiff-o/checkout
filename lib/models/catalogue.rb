@@ -2,7 +2,7 @@ require 'json'
 require_relative 'product'
 
 class Catalogue
-  attr_reader :products
+  attr_reader :products, :catalogue_file
 
   def initialize(catalogue_file)
     @products = []

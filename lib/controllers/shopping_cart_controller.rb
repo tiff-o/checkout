@@ -2,7 +2,7 @@ require_relative '../models/shopping_cart'
 require_relative '../views/shopping_cart_view'
 
 class ShoppingCartController
-  attr_reader :shopping_cart, :catalogue
+  attr_reader :shopping_cart, :catalogue, :shopping_cart_view
 
   def initialize(shopping_cart:, catalogue:)
     @catalogue = catalogue

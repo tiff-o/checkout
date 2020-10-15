@@ -24,7 +24,8 @@ class ShoppingCart
     end
   end
 
-  def load_cart_products # to extend to saving cart
+  def load_cart_products
+    # to extend to saving cart
     cart_file = File.read('lib/shopping_cart_products.json')
     cart_products = JSON.parse(cart_file)
     cart_products.each do |product|

@@ -12,9 +12,9 @@ describe ShoppingCart do
   end
 
   describe ".add" do
-      let(:catalogue) { Catalogue.new(@catalogue_file) }
-      let(:product) { catalogue.products[0] }
-      let(:shopping_cart) { shopping_cart = ShoppingCart.new(catalogue: catalogue) }
+    let(:catalogue) { Catalogue.new(@catalogue_file) }
+    let(:product) { catalogue.products[0] }
+    let(:shopping_cart) { ShoppingCart.new(catalogue: catalogue) }
 
     it "should add product to shopping cart" do
       shopping_cart.add(product)

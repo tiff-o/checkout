@@ -23,7 +23,7 @@ TOTAL: $163.65
 
 This is a CLI (Command Line Input) checkout system app written in Ruby, using the MVC framework.
 
-I opted to load the products into a Catalogue class to act as a repository of all products. I designed the Product class separately to allow for flexibility to create instances of Product outside of the given json file. The Shopping Cart class acts as another repository for products that can be checked out.
+I opted to load the products into a Catalogue class to act as a repository of all products. The Shopping Cart class acts as another repository for products that can be checked out.
 
 ## SETUP
 

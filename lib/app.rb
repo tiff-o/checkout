@@ -1,5 +1,4 @@
 require_relative 'models/catalogue'
-require_relative 'models/product'
 require_relative 'models/shopping_cart'
 require_relative 'controllers/catalogue_controller'
 require_relative 'controllers/shopping_cart_controller'
